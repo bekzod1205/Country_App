@@ -1,6 +1,7 @@
 package com.example.countryapp
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -42,6 +43,8 @@ class CountryFragment : Fragment() {
         binding.rv.setHasFixedSize(true)
         var adapter = CountryAdapter(add_country(countries))
         binding.rv.adapter = adapter
+
+
         val touch = object : ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP, 0) {
             override fun getMovementFlags(
                 recyclerView: RecyclerView,
@@ -77,61 +80,61 @@ class CountryFragment : Fragment() {
         list.add(
             Country(
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/1000px-Flag_of_Uzbekistan.svg.png",
-                "Uzbekistan"
+                "Uzbekistan", false
             )
         )
         list.add(
             Country(
                 "https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png",
-                "India"
+                "India", false
             )
         )
         list.add(
             Country(
                 "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/Flag_of_Brazil.svg/640px-Flag_of_Brazil.svg.png",
-                "Brazil"
+                "Brazil", false
             )
         )
         list.add(
             Country(
                 "https://cdn.britannica.com/18/147118-050-7F820ED5/flag-Argentina-2010.jpg",
-                "Argentina"
+                "Argentina", false
             )
         )
         list.add(
             Country(
                 "https://upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_Jamaica.svg",
-                "Jamaica"
+                "Jamaica", false
             )
         )
         list.add(
             Country(
                 "https://img5.goodfon.com/wallpaper/nbig/c/cf/italy-italia-flag-of-italy-italian-flag-flag.jpg",
-                "Italy"
+                "Italy", false
             )
         )
         list.add(
             Country(
                 "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/800px-Flag_of_Russia.svg.png",
-                "Russia"
+                "Russia", false
             )
         )
         list.add(
             Country(
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Flag_of_Denmark_fixed.svg/1200px-Flag_of_Denmark_fixed.svg.png",
-                "Denmark"
+                "Denmark", false
             )
         )
         list.add(
             Country(
                 "https://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg",
-                "Netherlands"
+                "Netherlands", false
             )
         )
         list.add(
             Country(
                 "https://upload.wikimedia.org/wikipedia/commons/8/89/Bandera_de_Espa%C3%B1a.svg",
-                "Spain"
+                "Spain", false
             )
         )
         return list

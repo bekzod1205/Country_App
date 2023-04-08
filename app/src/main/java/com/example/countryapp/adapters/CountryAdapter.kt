@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.countryapp.ItemTouchHelperAdapter
+import com.example.countryapp.R
 import com.example.countryapp.databinding.CountryItemBinding
-import com.example.countryapp.databinding.FragmentCountryBinding
 import com.example.countryapp.datas.Country
 import java.util.*
 
@@ -16,6 +16,7 @@ class CountryAdapter(var list: MutableList<Country>) :
         RecyclerView.ViewHolder(binding.root) {
         var name = binding.countryName
         var img = binding.countryImg
+        var liked = binding.liked
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CountryHolder {
@@ -32,6 +33,16 @@ class CountryAdapter(var list: MutableList<Country>) :
         val item = list[position]
         holder.name.text = item.name
         holder.img.load(item.image)
+        holder.liked.setOnClickListener {
+            if (!item.liked){
+                holder.liked.setImageResource(R.drawable.favorites)
+                item.liked = true
+            }else{
+                holder.liked.setImageResource(R.drawable.outline_favorite_border_24)
+                item.liked = false
+            }
+
+        }
     }
 
     override fun getItemCount(): Int {

@@ -1,4 +1,4 @@
 package com.example.countryapp.datas
 
-class Country(var image: String, var name: String) {
+class Country(var image: String, var name: String,var liked :Boolean) {
 }
