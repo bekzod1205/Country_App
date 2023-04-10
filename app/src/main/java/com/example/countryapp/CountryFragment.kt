@@ -38,6 +38,7 @@ class CountryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         val binding = FragmentCountryBinding.inflate(inflater, container, false)
         var countries = mutableListOf<Country>()
         binding.rv.setHasFixedSize(true)
